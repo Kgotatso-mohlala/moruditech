@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/_head.ejs") %>
+<body>
+ <!-- Navbar Section -->
+ <header id="navbar" class="navbar" data-aos="fade-in" data-aos-duration="2000">
+    <div class="navbar-container">
+        <div class="logo">
+            <span>MorudiTech</span>
+        </div>
+        <!-- Navbar Menu -->
+        <nav class="navbar-menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- Hamburger Toggle Button -->
+        <button class="hamburger" id="hamburger-toggle" aria-label="Open Menu">&#9776;</button>
+    </div>
+</header>
+
+<!-- Sidebar -->
+<div id="sidebar" class="sidebar">
+    <div class="sidebar-content">
+        <h3 class="text-white">Menu</h3>
+        <ul>
+            <li><a href="#home" class="text-white">Home</a></li>
+            <li><a href="#about" class="text-white">About</a></li>
+            <li><a href="#services" class="text-white">Services</a></li>
+            <li><a href="#contact" class="text-white">Contact</a></li>
+        </ul>
+    </div>
+    <!-- Close button inside sidebar -->
+    <span id="sidebar-close">&times;</span>
+</div>
+
+<section id="hero">
+    <div class="video-background">
+      <video autoplay muted loop id="hero-video">
+        <source src="https://videos.pexels.com/video-files/11387073/11387073-sd_640_360_24fps.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="hero-content">
+      <h1 class="animated-title">Welcome to Morudi Tech</h1>
+      <p class="animated-description">Innovating the future with cutting-edge technology solutions for businesses and individuals.</p>
+      <a href="#about" class="scroll-icon">
+        <i class="fas fa-chevron-down"></i>
+      </a>
+    </div>
+  </section>
+
+  <section id="about" class="about-section py-5">
+    <div class="container">
+      <!-- About Header -->
+      <div class="row mb-5">
+        <div class="col text-center" data-aos="fade-up">
+          <h2 class="section-title">About Morudi Tech</h2>
+          <p class="section-description">We’re a technology-driven company focused on bringing innovation and excellence to every solution we offer.</p>
+        </div>
+      </div>
+  
+      <!-- About Content -->
+      <div class="row">
+        <div class="col-md-6" data-aos="fade-right" data-aos-duration="1000">
+          <h3 class="sub-title">Our Vision</h3>
+          <p>At Morudi Tech, our vision is to empower businesses and individuals through innovative solutions that drive growth, enhance efficiency, and inspire creativity.</p>
+        </div>
+  
+        <div class="col-md-6" data-aos="fade-left" data-aos-duration="1000">
+          <h3 class="sub-title">Our Mission</h3>
+          <p>Our mission is to provide state-of-the-art technological solutions that address real-world challenges and help our clients stay ahead in a rapidly evolving digital landscape.</p>
+        </div>
+      </div>
+  
+      <!-- About Image & Quote -->
+      <div class="row align-items-center mt-5">
+        <div class="col-md-6" data-aos="zoom-in" data-aos-duration="1500">
+          <img src="https://images.pexels.com/photos/633409/pexels-photo-633409.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Morudi Tech" class="img-fluid rounded shadow-lg">
+        </div>
+        <div class="col-md-6" data-aos="fade-left" data-aos-duration="1500">
+          <blockquote class="blockquote">
+            <p class="mb-2">“Innovation is the ability to see change as an opportunity, not a threat.”</p>
+            <footer class="blockquote-footer">Anonymous <cite title="Source Title">– Morudi Tech</cite></footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="services-section py-5">
+    <div class="container">
+      <!-- Services Header -->
+      <div class="row mb-5 text-center" data-aos="fade-up">
+        <div class="col">
+          <h2 class="section-title">Our Services</h2>
+          <p class="section-description">We offer innovative and customized solutions to help your business grow and stay ahead of the curve.</p>
+        </div>
+      </div>
+  
+      <!-- Services Cards -->
+      <div class="row">
+        <div class="col-md-4" data-aos="fade-right" data-aos-duration="1000">
+          <div class="service-card card shadow-lg">
+            <div class="card-body text-center">
+              <i class="fas fa-cogs service-icon mb-3"></i>
+              <h5 class="card-title">Tech Consulting</h5>
+              <p class="card-text">Our expert consultants provide strategic advice to help you make the best technology decisions for your business.</p>
+              <button class="btn btn-primary toggle-btn" data-bs-toggle="collapse" data-bs-target="#techConsulting" aria-expanded="false" aria-controls="techConsulting">Learn More</button>
+              <div class="collapse" id="techConsulting">
+                <p class="mt-3">We work with your team to analyze your needs, plan, and implement tech solutions that align with your business goals.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+          <div class="service-card card shadow-lg">
+            <div class="card-body text-center">
+              <i class="fas fa-laptop-code service-icon mb-3"></i>
+              <h5 class="card-title">Software Development</h5>
+              <p class="card-text">We build custom software tailored to your business requirements, from web apps to mobile apps and enterprise systems.</p>
+              <button class="btn btn-primary toggle-btn" data-bs-toggle="collapse" data-bs-target="#softwareDevelopment" aria-expanded="false" aria-controls="softwareDevelopment">Learn More</button>
+              <div class="collapse" id="softwareDevelopment">
+                <p class="mt-3">Our development team follows agile methodologies to create secure, scalable, and high-performance applications.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-4" data-aos="fade-left" data-aos-duration="1000">
+          <div class="service-card card shadow-lg">
+            <div class="card-body text-center">
+              <i class="fas fa-cloud service-icon mb-3"></i>
+              <h5 class="card-title">Cloud Solutions</h5>
+              <p class="card-text">Leverage cloud technology to scale your infrastructure, increase collaboration, and reduce operational costs.</p>
+              <button class="btn btn-primary toggle-btn" data-bs-toggle="collapse" data-bs-target="#cloudSolutions" aria-expanded="false" aria-controls="cloudSolutions">Learn More</button>
+              <div class="collapse" id="cloudSolutions">
+                <p class="mt-3">We help you migrate to the cloud and optimize cloud resources for better performance, security, and cost efficiency.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="testimonials" class="testimonials-section py-5">
+    <div class="container">
+      <!-- Section Header -->
+      <div class="row mb-5 text-center" data-aos="fade-up">
+        <div class="col">
+          <h2 class="section-title">What Our Clients Say</h2>
+          <p class="section-description">We’re proud to have worked with incredible clients who trust our vision and services.</p>
+        </div>
+      </div>
+  
+      <!-- Testimonials Carousel -->
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-aos="fade-up" data-aos-duration="1200">
+            <div class="carousel-inner">
+              <!-- Testimonial 1 -->
+              <div class="carousel-item active">
+                <div class="testimonial-card text-center">
+                  <img src="https://via.placeholder.com/100" class="rounded-circle mb-3" alt="Client 1">
+                  <h5 class="client-name">John Doe</h5>
+                  <p class="client-position">CEO, Tech Innovations</p>
+                  <p class="client-testimonial">“Morudi Tech exceeded our expectations with their innovative solutions. Their team is highly professional and has helped us scale our operations seamlessly.”</p>
+                </div>
+              </div>
+  
+              <!-- Testimonial 2 -->
+              <div class="carousel-item">
+                <div class="testimonial-card text-center">
+                  <img src="https://via.placeholder.com/100" class="rounded-circle mb-3" alt="Client 2">
+                  <h5 class="client-name">Sarah Williams</h5>
+                  <p class="client-position">Founder, WebX Digital</p>
+                  <p class="client-testimonial">“The team at Morudi Tech is nothing short of amazing. Their attention to detail and customer-first approach made our collaboration truly exceptional.”</p>
+                </div>
+              </div>
+  
+              <!-- Testimonial 3 -->
+              <div class="carousel-item">
+                <div class="testimonial-card text-center">
+                  <img src="https://via.placeholder.com/100" class="rounded-circle mb-3" alt="Client 3">
+                  <h5 class="client-name">Alex Jenson</h5>
+                  <p class="client-position">Product Manager, FinTech Solutions</p>
+                  <p class="client-testimonial">“Working with Morudi Tech was a game-changer for us. Their cloud solutions and seamless integration into our processes saved us time and costs.”</p>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Carousel Controls -->
+            <button style="display: none;" class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button style="display: none;" class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section py-5">
+    <div class="container">
+      <!-- Section Header -->
+      <div class="row mb-5 text-center" data-aos="fade-up">
+        <div class="col">
+          <h2 class="section-title">Get in Touch</h2>
+          <p class="section-description">We’d love to hear from you. Whether you have a question or need assistance, feel free to reach out to us!</p>
+        </div>
+      </div>
+  
+      <!-- Contact Form and Additional Information -->
+      <div class="row">
+        <!-- Contact Form Section -->
+        <div class="col-md-6" data-aos="fade-right" data-aos-duration="1200">
+          <div class="contact-form card shadow-lg p-4">
+            <h4 class="form-title text-center mb-4">Contact Us</h4>
+            <form action="/contact" method="post">
+              <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Your Full Name" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email Address" required>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">Send Message</button>
+            </form>
+          </div>
+        </div>
+  
+        <!-- Additional Information Section -->
+        <div class="col-md-6" data-aos="fade-left" data-aos-duration="1200">
+          <div class="info-section card shadow-lg p-4">
+            <h4 class="info-title text-center mb-4">Contact Info</h4>
+            <ul class="list-unstyled">
+              <li class="mb-3" style="display: none;">
+                <i class="fas fa-location-pin"></i> <strong>Address:</strong> 
+              </li>
+              <li class="mb-3">
+                <i class="fas fa-phone-alt"></i> <strong>Phone: </strong> 082 962 0311
+              </li>
+              <li class="mb-3">
+                <i class="fas fa-envelope"></i> <strong>Email: </strong> moruditech@gmail.com
+              </li>
+              <li class="mb-3">
+                <i class="fas fa-clock"></i> <strong>Business Hours: </strong> Mon - Fri, 9am - 6pm
+              </li>
+            </ul>
+            <div class="social-links text-center mt-4">
+              <a href="#" class="btn btn-outline-primary rounded-circle m-2">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="btn btn-outline-primary rounded-circle m-2">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="btn btn-outline-primary rounded-circle m-2">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="btn btn-outline-primary rounded-circle m-2">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer py-5">
+    <div class="container">
+      <!-- Footer Top Row -->
+      <div class="row">
+        <!-- Branding -->
+        <div class="col-md-4 text-center text-md-start mb-4">
+          <h3 class="footer-brand">Morudi Tech</h3>
+          <p class="footer-description">Innovative solutions for your tech needs. We bring ideas to life.</p>
+        </div>
+  
+        <!-- Quick Links -->
+        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-duration="1200">
+          <h5 class="footer-title">Quick Links</h5>
+          <ul class="list-unstyled footer-links">
+            <li><a href="#about" class="footer-link">About Us</a></li>
+            <li><a href="#service" class="footer-link">Services</a></li>
+            <li><a href="#contact" class="footer-link">Contact</a></li>
+            <li><a href="/privacy" class="footer-link">Privacy Policy</a></li>
+            <li><a href="/terms" class="footer-link">Terms & Conditions</a></li>
+          </ul>
+        </div>
+  
+        <!-- Social Media Links -->
+        <div class="col-md-4 text-center text-md-end mb-4" data-aos="fade-up" data-aos-duration="1500">
+          <h5 class="footer-title">Follow Us</h5>
+          <div class="social-icons">
+            <a href="#" class="social-icon btn btn-outline-primary rounded-circle m-2">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon btn btn-outline-primary rounded-circle m-2">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-icon btn btn-outline-primary rounded-circle m-2">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="social-icon btn btn-outline-primary rounded-circle m-2">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Footer Bottom Row (Copyright) -->
+      <div class="row mt-4">
+        <div class="col text-center">
+          <p class="footer-copyright">© 2025 Morudi Tech. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <a href="#" class="go-top go-top-visible go-top-fade-out"><i class="fa fa-angle-up"></i></a>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+   AOS.init(); 
+   document.addEventListener('DOMContentLoaded', function () {
+  const offset = 300,
+        offsetOpacity = 1200,
+        scrollTopDuration = 700;
+  const backToTopButton = document.querySelector(".go-top");
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > offset) {
+      backToTopButton.classList.add("go-top-visible");
+    } else {
+      backToTopButton.classList.remove("go-top-visible", "go-top-fade-out");
+    }
+
+    if (window.scrollY > offsetOpacity) {
+      backToTopButton.classList.add("go-top-fade-out");
+    }
+  });
+
+  backToTopButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    
+    // Smooth scroll to top
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+});
+
+</script>
+</body>
+</html>
