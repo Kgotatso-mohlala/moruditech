@@ -8,48 +8,48 @@ const path = require('path');
 const transporter = nodemailer.createTransport({
   service: 'gmail',  // or any other email provider
   auth: {
-    user: 'your-email@gmail.com',  // Your email
-    pass: 'your-email-password',   // Your email password
+    user: process.env.YOUR_EMAIL,  // Your email
+    pass: process.env.YOUR_PASS,   // Your email password
   },
 });
 
 // Handle contact form route
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   const { name, email, message } = req.body;
 
-  // Render email templates for admin and client
+  // Path to email templates
   const contactAdminTemplate = path.join(__dirname, '..', 'views', 'emails', 'contactAdmin.ejs');
   const contactClientTemplate = path.join(__dirname, '..', 'views', 'emails', 'contactClient.ejs');
 
-  // Admin email options
-  const adminMailOptions = {
-    from: email,
-    to: 'admin-email@example.com',  // Admin email
-    subject: 'New Contact Form Submission',
-    html: ejs.renderFile(contactAdminTemplate, { name, email, message }),
-  };
+  try {
+    // Admin email options
+    const adminMailOptions = {
+      from: email,
+      to: 'nelsonmohlala617@gmail.com',  // Admin email
+      subject: 'New Contact Form Submission',
+      html: await ejs.renderFile(contactAdminTemplate, { name, email, message }),  // Await the template rendering
+    };
 
-  // Client email options
-  const clientMailOptions = {
-    from: 'your-email@example.com',  // Your email
-    to: email,
-    subject: 'Thank You for Contacting Us',
-    html: ejs.renderFile(contactClientTemplate, { name, message }),
-  };
+    // Client email options
+    const clientMailOptions = {
+      from: process.env.YOUR_EMAIL,  // Your email
+      to: email,
+      subject: 'Thank You for Contacting Us',
+      html: await ejs.renderFile(contactClientTemplate, { name, message }),  // Await the template rendering
+    };
 
-  // Send emails to both the client and admin
-  Promise.all([
-    transporter.sendMail(adminMailOptions),
-    transporter.sendMail(clientMailOptions),
-  ])
-    .then(() => {
-      // Redirect or send a success message
-      res.send('Message sent successfully');
-    })
-    .catch((error) => {
-      console.error('Error sending emails:', error);
-      res.status(500).send('Error sending message');
-    });
+    // Send emails to both the client and admin
+    await Promise.all([
+      transporter.sendMail(adminMailOptions),
+      transporter.sendMail(clientMailOptions),
+    ]);
+
+    // Send a success response
+    res.send('Message sent successfully');
+  } catch (error) {
+    console.error('Error sending emails:', error);
+    res.status(500).send('Error sending message');
+  }
 });
 
 module.exports = router;
