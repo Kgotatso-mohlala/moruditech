@@ -34,4 +34,44 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
+    const form = document.getElementById('contactForm');
+    const successToast = document.getElementById('successToast');
+    const errorToast = document.getElementById('errorToast');
+    const backButton = document.getElementById('backButton');
+  
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();  // Prevent form from redirecting or refreshing the page
+  
+      const formData = new FormData(form);
+      const data = new URLSearchParams(formData);
+  
+      try {
+        const response = await fetch('/contact', {
+          method: 'POST',
+          body: data,
+        });
+  
+        const result = await response.json();
+        
+        if (result.success) {
+          // Show success toast
+          successToast.classList.add('show');
+          
+          // Reset form after successful submission
+          form.reset();
+  
+          // Hide toast after 3 seconds
+          setTimeout(() => successToast.classList.remove('show'), 3000);
+        } else {
+          throw new Error(result.message);
+        }
+      } catch (error) {
+        console.error('Error sending form data:', error);
+        
+        // Show error toast if submission fails
+        errorToast.classList.add('show');
+        setTimeout(() => errorToast.classList.remove('show'), 3000);
+      }
+    });
 });

@@ -224,18 +224,21 @@
         <div class="col-md-6" data-aos="fade-right" data-aos-duration="1200">
           <div class="contact-form card shadow-lg p-4">
             <h4 class="form-title text-center mb-4">Contact Us</h4>
-            <form action="/contact" method="post">
+            <form id="contactForm" action="/contact" method="POST" novalidate>
               <div class="mb-3">
                 <label for="name" class="form-label">Full Name</label>
                 <input type="text" class="form-control" id="name" name="name" placeholder="Your Full Name" required>
+                <div class="invalid-feedback">Please provide a valid name.</div>
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Email Address</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="Your Email Address" required>
+                <div class="invalid-feedback">Please provide a valid email address.</div>
               </div>
               <div class="mb-3">
                 <label for="message" class="form-label">Message</label>
                 <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+                <div class="invalid-feedback">Please provide a message.</div>
               </div>
               <button type="submit" class="btn btn-primary w-100">Send Message</button>
             </form>
@@ -278,6 +281,19 @@
         </div>
       </div>
     </div>
+       <!-- Toast Notification -->
+       <div id="successToast" class="toast" style="position: fixed; top: 10px; right: 10px;">
+        <div class="toast-body bg-success text-white">
+          Message sent successfully!
+        </div>
+      </div>
+      
+      <div id="errorToast" class="toast" style="position: fixed; top: 10px; right: 10px;">
+        <div class="toast-body bg-danger text-white">
+          There was an error sending your message. Please try again later.
+        </div>
+      </div>
+      
   </section>
   <footer class="footer py-5">
     <div class="container">
@@ -362,6 +378,86 @@
   });
 });
 
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contact-form");
+    const nameField = document.getElementById('name');
+    const emailField = document.getElementById('email');
+    const messageField = document.getElementById('message');
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent default form submission
+
+      let valid = true;
+
+      // Reset error messages
+      document.getElementById('name-error').style.display = 'none';
+      document.getElementById('email-error').style.display = 'none';
+      document.getElementById('message-error').style.display = 'none';
+
+      // Custom Validation
+
+      // Name Validation
+      if (!nameField.value.trim()) {
+        valid = false;
+        document.getElementById('name-error').style.display = 'block';
+      }
+
+      // Email Validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(emailField.value)) {
+        valid = false;
+        document.getElementById('email-error').style.display = 'block';
+      }
+
+      // Message Validation
+      if (!messageField.value.trim()) {
+        valid = false;
+        document.getElementById('message-error').style.display = 'block';
+      }
+
+      // If validation passes, submit the form via AJAX
+      if (valid) {
+        const formData = new FormData(form); // Collect form data
+
+        fetch('/contact', {
+          method: 'POST',
+          body: formData,
+        })
+        .then(response => response.text()) // Get response as text
+        .then(data => {
+          if (data === 'Message sent successfully') {
+            // Show success toast
+            Toastify({
+              text: "Message sent successfully!",
+              backgroundColor: "linear-gradient(to right, #4caf50, #2f7d31)",
+              duration: 3000
+            }).showToast();
+
+            // Clear the form
+            form.reset();
+          } else {
+            // Show error toast if there's an issue
+            Toastify({
+              text: "Error sending message. Please try again.",
+              backgroundColor: "linear-gradient(to right, #f44336, #b71c1c)",
+              duration: 3000
+            }).showToast();
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          // Show error toast in case of any issue
+          Toastify({
+            text: "Error submitting the form. Please try again.",
+            backgroundColor: "linear-gradient(to right, #f44336, #b71c1c)",
+            duration: 3000
+          }).showToast();
+        });
+      }
+    });
+  });
 </script>
 </body>
 </html>
