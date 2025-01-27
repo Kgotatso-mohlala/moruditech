@@ -65,13 +65,14 @@ h1, h2, h3 {
     width: 100%;
 }
 
-.navbar .logo {
+.navbar .logo a {
     font-family: sans-serif;
     font-size: 32px;
     color: white;
     font-weight: bold;
     letter-spacing: 1px;
     text-transform: uppercase;
+    text-decoration: none;
 }
 
 .navbar-menu ul {
