@@ -1,41 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include("../partials/_head.ejs") %>
+  <head>
+    <%- include("../partials/_head.ejs") %>
+    <title>Morudi Tech | Innovating the Future</title>
+  </head>
 <body>
- <!-- Navbar Section -->
- <header id="navbar" class="navbar" data-aos="fade-in" data-aos-duration="2000">
-    <div class="navbar-container">
-        <div class="logo">
-            <span>MorudiTech</span>
-        </div>
-        <!-- Navbar Menu -->
-        <nav class="navbar-menu">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <!-- Hamburger Toggle Button -->
-        <button class="hamburger" id="hamburger-toggle" aria-label="Open Menu">&#9776;</button>
-    </div>
-</header>
-
-<!-- Sidebar -->
-<div id="sidebar" class="sidebar">
-    <div class="sidebar-content">
-        <h3 class="text-white">Menu</h3>
-        <ul>
-            <li><a href="#home" class="text-white">Home</a></li>
-            <li><a href="#about" class="text-white">About</a></li>
-            <li><a href="#services" class="text-white">Services</a></li>
-            <li><a href="#contact" class="text-white">Contact</a></li>
-        </ul>
-    </div>
-    <!-- Close button inside sidebar -->
-    <span id="sidebar-close">&times;</span>
-</div>
+<!-- Navigation -->
+<%- include("../partials/_nav.ejs") %>
 
 <section id="hero">
     <div class="video-background">
@@ -84,7 +55,7 @@
         <div class="col-md-6" data-aos="fade-left" data-aos-duration="1500">
           <blockquote class="blockquote">
             <p class="mb-2">“Innovation is the ability to see change as an opportunity, not a threat.”</p>
-            <footer class="blockquote-footer">Anonymous <cite title="Source Title">– Morudi Tech</cite></footer>
+            <div class="blockquote-footer">Anonymous <cite title="Source Title">– Morudi Tech</cite></div>
           </blockquote>
         </div>
       </div>
@@ -295,56 +266,8 @@
       </div>
       
   </section>
-  <footer class="footer py-5">
-    <div class="container">
-      <!-- Footer Top Row -->
-      <div class="row">
-        <!-- Branding -->
-        <div class="col-md-4 text-center text-md-start mb-4">
-          <h3 class="footer-brand">Morudi Tech</h3>
-          <p class="footer-description">Innovative solutions for your tech needs. We bring ideas to life.</p>
-        </div>
-  
-        <!-- Quick Links -->
-        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-duration="1200">
-          <h5 class="footer-title">Quick Links</h5>
-          <ul class="list-unstyled footer-links">
-            <li><a href="#about" class="footer-link">About Us</a></li>
-            <li><a href="#service" class="footer-link">Services</a></li>
-            <li><a href="#contact" class="footer-link">Contact</a></li>
-            <li><a href="/privacy" class="footer-link">Privacy Policy</a></li>
-            <li><a href="/terms" class="footer-link">Terms & Conditions</a></li>
-          </ul>
-        </div>
-  
-        <!-- Social Media Links -->
-        <div class="col-md-4 text-center text-md-end mb-4" data-aos="fade-up" data-aos-duration="1500">
-          <h5 class="footer-title">Follow Us</h5>
-          <div class="social-icons">
-            <a href="#" class="social-icon btn btn-outline-primary rounded-circle m-2">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="social-icon btn btn-outline-primary rounded-circle m-2">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="social-icon btn btn-outline-primary rounded-circle m-2">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="#" class="social-icon btn btn-outline-primary rounded-circle m-2">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Footer Bottom Row (Copyright) -->
-      <div class="row mt-4">
-        <div class="col text-center">
-          <p class="footer-copyright">© 2025 Morudi Tech. All rights reserved.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
+   <!-- Footer -->
+   <%- include("../partials/_footer.ejs") %>
   <a href="#" class="go-top go-top-visible go-top-fade-out"><i class="fa fa-angle-up"></i></a>
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
