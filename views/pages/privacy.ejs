@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy | Morudi Tech</title>
-
+  <link rel="icon" href="/assets/images/icon.webp" type="image/webp">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
 
@@ -29,60 +29,63 @@
 <%- include("../partials/_nav.ejs") %>
 
   <!-- Privacy Section -->
-  <div class="container privacy-section" data-aos="fade-up">
-    <h2 class="section-title">Privacy Policy</h2>
-    <p class="text-center">Your privacy is of utmost importance to us. Please read our privacy policy below.</p>
-
-    <div class="accordion" id="privacyAccordion" data-aos="fade-up" data-aos-delay="100">
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingOne">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            <i class="fas fa-shield-alt"></i> Data Collection
-          </button>
-        </h2>
-        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#privacyAccordion">
-          <div class="accordion-body">
-            <ul class="privacy-list">
-              <li><strong>1. Personal Data:</strong> We collect personal information you provide voluntarily, such as your name, email, etc.</li>
-              <li><strong>2. Usage Data:</strong> We collect data about how you use our website to improve our services.</li>
-            </ul>
+   <section class="privacy-section">
+    <div class="container privacy" data-aos="fade-up">
+      <h2 class="section-title">Privacy Policy</h2>
+      <p class="text-center">Your privacy is of utmost importance to us. Please read our privacy policy below.</p>
+  
+      <div class="accordion" id="privacyAccordion" data-aos="fade-up" data-aos-delay="100">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <i class="fas fa-shield-alt"></i> Data Collection
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#privacyAccordion">
+            <div class="accordion-body">
+              <ul class="privacy-list">
+                <li><strong>1. Personal Data:</strong> We collect personal information you provide voluntarily, such as your name, email, etc.</li>
+                <li><strong>2. Usage Data:</strong> We collect data about how you use our website to improve our services.</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingTwo">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            <i class="fas fa-lock"></i> Data Protection
-          </button>
-        </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#privacyAccordion">
-          <div class="accordion-body">
-            <ul class="privacy-list">
-              <li><strong>3. Security:</strong> We implement industry-standard security measures to protect your personal data.</li>
-              <li><strong>4. Data Sharing:</strong> We do not sell or share your personal information with third parties without your consent.</li>
-            </ul>
+  
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <i class="fas fa-lock"></i> Data Protection
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#privacyAccordion">
+            <div class="accordion-body">
+              <ul class="privacy-list">
+                <li><strong>3. Security:</strong> We implement industry-standard security measures to protect your personal data.</li>
+                <li><strong>4. Data Sharing:</strong> We do not sell or share your personal information with third parties without your consent.</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingThree">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            <i class="fas fa-cogs"></i> Cookies
-          </button>
-        </h2>
-        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#privacyAccordion">
-          <div class="accordion-body">
-            <ul class="privacy-list">
-              <li><strong>5. Cookies:</strong> We use cookies to personalize your experience and track usage.</li>
-              <li><strong>6. Cookie Management:</strong> You can control cookies through your browser settings.</li>
-            </ul>
+  
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              <i class="fas fa-cogs"></i> Cookies
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#privacyAccordion">
+            <div class="accordion-body">
+              <ul class="privacy-list">
+                <li><strong>5. Cookies:</strong> We use cookies to personalize your experience and track usage.</li>
+                <li><strong>6. Cookie Management:</strong> You can control cookies through your browser settings.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+   </section>
+  
 
   <!-- Footer -->
   <%- include("../partials/_footer.ejs") %>
